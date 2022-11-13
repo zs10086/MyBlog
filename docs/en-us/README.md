@@ -1,0 +1,3 @@
+# Index
+
+> Simply take notes.
