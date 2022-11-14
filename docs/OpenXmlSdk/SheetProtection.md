@@ -204,3 +204,5 @@ End Class
 ```
 
 <!-- tabs:end -->
+
+![logo](../_images/GetPasswordHash.png ':size=50%')
