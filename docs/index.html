@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>zs10086 wiki</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" /> -->
 </head>
 
 <body>
@@ -42,12 +43,12 @@
       search: {
         noData: {
           '/': '没有结果!',
-          '/en-us/': 'No results!',
+          '/en-us/': 'No results!'
         },
         paths: 'auto',
         placeholder: {
           '/': '搜索',
-          '/en-us/': 'Search',
+          '/en-us/': 'Search'
         },
         pathNamespaces: ['/en-us'],
       },
@@ -57,16 +58,44 @@
         color: 'rgb(90,90,90)',
         language: 'chinese'
       },
+      copyCode: {
+        buttonText: {
+          '/': '点击复制',
+          '/en-us/': 'Copy to clipboard'
+        },
+        errorText: {
+          '/': '错误',
+          '/en-us/': 'Error'
+        },
+        successText: {
+          '/': '已复制',
+          '/en-us/': 'Copied'
+        }
+      },
+      scrollToTop: {
+        auto: true,
+        icon: 'arrow-up-1',
+        right: 15,
+        bottom: 15,
+        width: 50,
+        height: 40,
+        offset: 500
+      },
       plugins: [
         function (hook, vm) {
           hook.beforeEach(function (html) {
-            var url = '';
+            var url = 'https://github.com/zs10086/MyBlog/blob/master/docs/' + vm.route.file;;
             var editHtml = '[:memo: Edit Document](' + url + ')\n';
+            var footer = [
+              '\n\n----\n\n',
+              "<footer style='text-align: left;'>",
+              '<span>Made with :heart: by <a href="https://github.com/zs10086" target="_blank">明天你好</a>',
+              "</footer>",
+            ].join("");
             return (
               editHtml +
               html +
-              '\n\n----\n\n' +
-              'Powered by 明天你好'
+              footer
             );
           });
         },
@@ -76,6 +105,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
@@ -89,8 +119,10 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
 
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="//unpkg.com/@zhg-x/docsify-plugins@1.0.2/src/scroll-to-top.js"></script>
 </body>
 
 </html>
